@@ -1,0 +1,619 @@
+
+ ANSYS Multiphysics                                
+
+
+ *------------------------------------------------------------------*
+ |                                                                  |
+ |   W E L C O M E   T O   T H E   A N S Y S (R)  P R O G R A M     |
+ |                                                                  |
+ *------------------------------------------------------------------*
+
+
+
+
+ ***************************************************************
+ *            ANSYS Release 17.2     LEGAL NOTICES             *
+ ***************************************************************
+ *                                                             *
+ * Copyright 2016 SAS IP, Inc.  All rights reserved.           *
+ * Unauthorized use, distribution or duplication is            *
+ * prohibited.                                                 *
+ *                                                             *
+ * Ansys is a registered trademark of ANSYS, Inc. or its       *
+ * subsidiaries in the United States or other countries.       *
+ * See the ANSYS, Inc. online documentation or the ANSYS, Inc. *
+ * documentation CD or online help for the complete Legal      *
+ * Notice.                                                     *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+ * INCLUDE TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY      *
+ * PRODUCTS OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS.    *
+ * The software products and documentation are furnished by    *
+ * ANSYS, Inc. or its subsidiaries under a software license    *
+ * agreement that contains provisions concerning               *
+ * non-disclosure, copying, length and nature of use,          *
+ * compliance with exporting laws, warranties, disclaimers,    *
+ * limitations of liability, and remedies, and other           *
+ * provisions.  The software products and documentation may be *
+ * used, disclosed, transferred, or copied only in accordance  *
+ * with the terms and conditions of that software license      *
+ * agreement.                                                  *
+ *                                                             *
+ * ANSYS, Inc. is a UL registered                              *
+ * ISO 9001:2008 company.                                      *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * This product is subject to U.S. laws governing export and   *
+ * re-export.                                                  *
+ *                                                             *
+ * For U.S. Government users, except as specifically granted   *
+ * by the ANSYS, Inc. software license agreement, the use,     *
+ * duplication, or disclosure by the United States Government  *
+ * is subject to restrictions stated in the ANSYS, Inc.        *
+ * software license agreement and FAR 12.212 (for non-DOD      *
+ * licenses).                                                  *
+ *                                                             *
+ ***************************************************************
+
+ Release 17.2
+     
+ Point Releases and Patches installed:   
+     
+ ANSYS, Inc. Products Release 17.2   
+ ANSYS Mechanical Products Release 17.2  
+ ANSYS Autodyn Release 17.2  
+ ANSYS LS-DYNA Release 17.2  
+ ANSYS AIM Release 17.2  
+ ANSYS, Inc. License Manager Release 17.2
+
+
+          *****  ANSYS COMMAND LINE ARGUMENTS  *****
+  BATCH MODE REQUESTED (-b)    = LIST
+  INPUT FILE COPY MODE (-c)    = COPY
+  INITIAL DIRECTORY = G:\pyprojects\VKR\temp
+
+ RELEASE= Release 17.2         BUILD= 17.2      UP20160718   VERSION=WINDOWS x64 
+ CURRENT JOBNAME=file  01:47:48  MAY 14, 2018 CP=      1.170
+
+     1  *SET,l,4
+     2  *SET,b,1
+     3  *SET,h,0.25 
+     4  *SET,l0,1   
+     5  *SET,del,0.05   
+     6  *SET,d,0.01 
+     7  /PREP7  
+     8  ET,1,SOLID187   
+     9  BLOCK,,l,,b,,h, 
+    10  K,9,l0,,,   
+    11  K,10,l0+del,,,  
+    12  K,11,l0+del/2,d,,   
+    13  K,12,l0,0,h,
+    14  K,13,l0+del,0,h,
+    15  K,14,l0+del/2,d,h,  
+    16  V,9,10,11,12,13,14  
+    17  VSBV,1,2
+    18  HPTCREATE,AREA,15,0,COORD,0.1,b/2,h,
+    19  HPTCREATE,AREA,15,0,COORD,l/4,b/2,h,
+    20  HPTCREATE,AREA,15,0,COORD,l/2,b/2,h,
+    21  HPTCREATE,AREA,15,0,COORD,3*l/4,b/2,h,  
+    22  HPTCREATE,AREA,15,0,COORD,l-0.1,b/2,h,  
+    23  MPTEMP,,,,,,,,  
+    24  MPTEMP,1,0  
+    25  MPDATA,EX,1,,2e10   
+    26  MPDATA,PRXY,1,,0.3  
+    27  ESIZE,0.1,0,
+    28  MPDATA,DENS,1,,2400 
+    29  vmesh,all   
+    30  dl,1,,all   
+    31  dl,3,,all   
+    32  /SOL
+    33  ANTYPE,2
+    34  MODOPT,LANB,5   
+    35  EQSLV,SPAR  
+    36  MXPAND,5, , ,0  
+    37  LUMPM,0 
+    38  PSTRES,0
+    39  MODOPT,LANB,5,1,100, ,OFF   
+    40  solve   
+    41  /POST1  
+    42  SET,FIRST   
+    43  *GET,F1,MODE,1,FREQ 
+    44  *GET,F2,MODE,2,FREQ 
+    45  *cfopen,G:\pyprojects\VKR\results\antype2\modalResult1,txt  
+    46  *vwrite,F1  
+    47  (f7.4)  
+    48  *vwrite,F2  
+    49  (f7.4)  
+    50  *cfclos 
+
+ RUN SETUP PROCEDURE FROM FILE= G:\Prpgrams\ANSYS Inc\v172\ANSYS\apdl\start.ans
+
+ /INPUT FILE= G:\Prpgrams\ANSYS Inc\v172\ANSYS\apdl\start.ans  LINE=       0
+
+ PARAMETER L =     4.000000000    
+
+ PARAMETER B =     1.000000000    
+
+ PARAMETER H =    0.2500000000    
+
+ PARAMETER L0 =     1.000000000    
+
+ PARAMETER DEL =    0.5000000000E-01
+
+ PARAMETER D =    0.1000000000E-01
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 17.2     17.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   01:47:48  MAY 14, 2018 CP=      1.248
+
+                                                                               
+
+
+
+          ***** ANSYS ANALYSIS DEFINITION (PREP7) *****
+
+ ELEMENT TYPE       1 IS SOLID187     3-D 10-NODE STRUCTURAL SOLID
+  KEYOPT( 1- 6)=        0      0      0        0      0      0
+  KEYOPT( 7-12)=        0      0      0        0      0      0
+  KEYOPT(13-18)=        0      0      0        0      0      0
+
+ CURRENT NODAL DOF SET IS  UX    UY    UZ  
+  THREE-DIMENSIONAL MODEL
+
+ CREATE A HEXAHEDRAL VOLUME WITH
+ X-DISTANCES FROM      0.000000000     TO      4.000000000    
+ Y-DISTANCES FROM      0.000000000     TO      1.000000000    
+ Z-DISTANCES FROM      0.000000000     TO     0.2500000000    
+
+      OUTPUT VOLUME =     1
+
+ KEYPOINT      9   X,Y,Z=   1.00000       0.00000       0.00000      IN CSYS=  0
+
+ KEYPOINT     10   X,Y,Z=   1.05000       0.00000       0.00000      IN CSYS=  0
+
+ KEYPOINT     11   X,Y,Z=   1.02500      0.100000E-01   0.00000      IN CSYS=  0
+
+ KEYPOINT     12   X,Y,Z=   1.00000       0.00000      0.250000      IN CSYS=  0
+
+ KEYPOINT     13   X,Y,Z=   1.05000       0.00000      0.250000      IN CSYS=  0
+
+ KEYPOINT     14   X,Y,Z=   1.02500      0.100000E-01  0.250000      IN CSYS=  0
+
+ VOLUME CONNECTING KEYPOINTS     9    10    11    11    12    13    14    14
+    (GENERATED LINES AND AREAS FITTED IN ACTIVE CSYS =  0)
+
+     VOLUME NUMBER =      2
+
+ SUBTRACT VOLUMES
+
+      VOLUME NUMBERS TO BE OPERATED ON =       1
+      VOLUMES OPERATED ON WILL BE DELETED IF POSSIBLE
+      VOLUME NUMBERS TO BE SUBTRACTED  =       2
+      VOLUMES SUBTRACTED WILL BE DELETED IF POSSIBLE
+      OUTPUT VOLUMES =     3
+
+ GENERATE HARD POINT ON AREA     15 WITH X,Y,Z=  0.100000      0.500000      0.250000      IN CSYS=  0
+ ASSIGN TO HARD POINT     15
+
+ HARDPOINT    15   X,Y,Z=  0.100000      0.500000      0.250000      IN CSYS=  0
+
+ GENERATE HARD POINT ON AREA     15 WITH X,Y,Z=   1.00000      0.500000      0.250000      IN CSYS=  0
+ ASSIGN TO HARD POINT     16
+
+ HARDPOINT    16   X,Y,Z=   1.00000      0.500000      0.250000      IN CSYS=  0
+
+ GENERATE HARD POINT ON AREA     15 WITH X,Y,Z=   2.00000      0.500000      0.250000      IN CSYS=  0
+ ASSIGN TO HARD POINT     17
+
+ HARDPOINT    17   X,Y,Z=   2.00000      0.500000      0.250000      IN CSYS=  0
+
+ GENERATE HARD POINT ON AREA     15 WITH X,Y,Z=   3.00000      0.500000      0.250000      IN CSYS=  0
+ ASSIGN TO HARD POINT     18
+
+ HARDPOINT    18   X,Y,Z=   3.00000      0.500000      0.250000      IN CSYS=  0
+
+ GENERATE HARD POINT ON AREA     15 WITH X,Y,Z=   3.90000      0.500000      0.250000      IN CSYS=  0
+ ASSIGN TO HARD POINT     19
+
+ HARDPOINT    19   X,Y,Z=   3.90000      0.500000      0.250000      IN CSYS=  0
+
+ TEMPERATURE TABLE ERASED.
+
+ *** PROPERTY TEMPERATURE TABLE    NUM. TEMPS=  1 ***
+ SLOC=   1     0.000000    
+
+ PROPERTY TABLE EX    MAT=      1  NUM. POINTS=  1
+ SLOC=   1    0.2000000E+11
+
+ PROPERTY TABLE PRXY  MAT=      1  NUM. POINTS=  1
+ SLOC=   1    0.3000000    
+
+ DEFAULT ELEMENT DIVISIONS PER LINE BASED ON ELEMENT SIZE =  0.100    
+
+ PROPERTY TABLE DENS  MAT=      1  NUM. POINTS=  1
+ SLOC=   1     2400.000    
+
+ GENERATE NODES AND ELEMENTS   IN  ALL  SELECTED VOLUMES  
+
+ NUMBER OF VOLUMES MESHED   =         1
+ MAXIMUM NODE NUMBER        =     13215
+ MAXIMUM ELEMENT NUMBER     =      8064
+
+ CONSTRAINT AT LINE     1
+      LOAD LABELS = UX    UY    UZ  
+      VALUES =      0.0000         0.0000    
+
+ CONSTRAINT AT LINE     3
+      LOAD LABELS = UX    UY    UZ  
+      VALUES =      0.0000         0.0000    
+
+
+ ***** ROUTINE COMPLETED *****  CP =         1.529
+
+
+
+ *****  ANSYS SOLUTION ROUTINE  *****
+
+
+ PERFORM A MODAL ANALYSIS
+  THIS WILL BE A NEW ANALYSIS
+
+
+ USE SYM. BLOCK LANCZOS MODE EXTRACTION METHOD
+  EXTRACT    5 MODES
+  NORMALIZE THE MODE SHAPES TO THE MASS MATRIX
+
+ USE SPARSE MATRIX DIRECT SOLVER
+
+
+ NUMBER OF MODES TO EXPAND=     5
+  DO NOT CALCULATE ELEMENT RESULTS
+
+ USE DEFAULT MASS MATRIX FORMULATION
+
+
+ DO NOT INCLUDE PRESTRESS EFFECTS
+
+
+ USE SYM. BLOCK LANCZOS MODE EXTRACTION METHOD
+  EXTRACT    5 MODES
+  EXTRACT FREQUENCIES IN THE RANGE   1.0000     TO   100.00    
+  NORMALIZE THE MODE SHAPES TO THE MASS MATRIX
+
+ *****  ANSYS SOLVE    COMMAND  *****
+
+ TRANSFER SOLID MODEL BOUNDARY CONDITIONS TO FINITE ELEMENT MODEL
+      CONSTRAINTS    TRANSFERRED FROM LINES         =    126
+
+ *** NOTE ***                            CP =       1.529   TIME= 01:47:48
+ There is no title defined for this analysis.                            
+
+ *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
+                ---GIVE SUGGESTIONS ONLY---
+
+ ELEMENT TYPE    1 IS SOLID187. IT IS NOT ASSOCIATED WITH FULLY INCOMPRESSIBLE
+ HYPERELASTIC MATERIALS. NO SUGGESTION IS AVAILABLE.
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 17.2     17.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   01:47:48  MAY 14, 2018 CP=      1.560
+
+                                                                               
+
+
+
+                       S O L U T I O N   O P T I O N S
+
+   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
+   DEGREES OF FREEDOM. . . . . . UX   UY   UZ  
+   ANALYSIS TYPE . . . . . . . . . . . . . . . . .MODAL                
+      EXTRACTION METHOD. . . . . . . . . . . . . .BLOCK LANCZOS
+   EQUATION SOLVER OPTION. . . . . . . . . . . . .SPARSE             
+   NUMBER OF MODES TO EXTRACT. . . . . . . . . . .     5
+   MODAL EXTRACTION RANGE. . . . . . . . . . . . .  1.0000     TO   100.00    
+   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
+   NUMBER OF MODES TO EXPAND . . . . . . . . . . .     5
+   ELEMENT RESULTS CALCULATION . . . . . . . . . .OFF
+
+ *** NOTE ***                            CP =       1.591   TIME= 01:47:48
+ The conditions for direct assembly have been met.  No .emat or .erot    
+ files will be produced.                                                 
+
+                      L O A D   S T E P   O P T I O N S
+
+   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+   THERMAL STRAINS INCLUDED IN THE LOAD VECTOR . .   YES
+   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
+   DATABASE OUTPUT CONTROLS. . . . . . . . . . . .ALL DATA WRITTEN
+
+
+
+                         ***********  PRECISE MASS SUMMARY  ***********
+
+   TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN
+               Translational mass               |   Coupled translational/rotational mass
+         2399.9        0.0000        0.0000     |     0.0000        299.98       -1200.0    
+         0.0000        2399.9        0.0000     |    -299.98        0.0000        4799.8    
+         0.0000        0.0000        2399.9     |     1200.0       -4799.8        0.0000    
+     ------------------------------------------ | ------------------------------------------
+                                                |         Rotational mass (inertia)
+                                                |     850.00       -2400.0       -599.98    
+                                                |    -2400.0        12850.       -150.00    
+                                                |    -599.98       -150.00        13600.    
+
+   TOTAL MASS =  2399.9    
+     The mass principal axes coincide with the global Cartesian axes
+
+   CENTER OF MASS (X,Y,Z)=    2.0001       0.50003       0.12500    
+
+   TOTAL INERTIA ABOUT CENTER OF MASS
+         212.46       0.72642E-01   0.90949E-12
+        0.72642E-01    3212.4      -0.48317E-12
+        0.90949E-12  -0.48317E-12    3399.8    
+     The inertia principal axes coincide with the global Cartesian axes
+
+
+  *** MASS SUMMARY BY ELEMENT TYPE ***
+
+  TYPE      MASS
+     1   2399.85    
+
+ Range of element maximum matrix coefficients in global coordinates
+ Maximum = 4.830723529E+09 at element 699.                               
+ Minimum = 565072415 at element 6336.                                    
+
+   *** ELEMENT MATRIX FORMULATION TIMES
+  TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+     1      8064  SOLID187      1.451   0.000180
+ Time at end of element matrix formulation CP = 3.47882247.              
+
+  BLOCK LANCZOS CALCULATION OF UP TO    5 EIGENVECTORS.
+  NUMBER OF EQUATIONS              =        39519
+  MAXIMUM WAVEFRONT                =          222
+  MAXIMUM MODES STORED             =            5
+  MINIMUM EIGENVALUE               =  0.10000E+01
+  MAXIMUM EIGENVALUE               =  0.10000E+03
+
+  Memory allocated for solver =         277.529 MB
+  Memory required for in-core =         160.476 MB
+  Memory required for out-of-core =      27.622 MB
+
+
+ *** NOTE ***                            CP =       4.930   TIME= 01:47:51
+ The Block Lanczos solver is currently running in the in-core memory     
+ mode.  This memory mode uses the most amount of memory in order to      
+ avoid using the hard drive as much as possible, which most often        
+ results in the fastest solution time.  This mode is recommended if      
+ enough physical memory is present to accommodate all of the solver      
+ data.                                                                   
+
+ *** NOTE ***                            CP =      10.546   TIME= 01:47:54
+ Fewer modes than the requested number of modes ( 5 ) were computed.     
+ The range specified (FREQB= 1, FREQE= 100) contains only 3 modes.       
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 17.2     17.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   01:47:54  MAY 14, 2018 CP=     10.546
+
+                                                                               
+
+
+
+ *** FREQUENCIES FROM BLOCK LANCZOS ITERATION ***
+
+  MODE    FREQUENCY (HERTZ)      
+
+
+
+   FREQUENCY RANGE REQUESTED=   1.00000       100.000    
+    1     31.13810706265    
+    2     76.65667875021    
+    3     89.00059851197    
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 17.2     17.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   01:47:54  MAY 14, 2018 CP=     10.670
+
+                                                                               
+
+
+
+
+
+          ***** PARTICIPATION FACTOR CALCULATION *****  X  DIRECTION
+                                                                                  CUMULATIVE     RATIO EFF.MASS
+  MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
+     1     31.1381       0.32115E-01   0.47117E-01    0.003264    0.222004E-02    0.106509E-04    0.925074E-06
+     2     76.6567       0.13045E-01    14.437        1.000000     208.434        0.999994        0.868527E-01
+     3     89.0006       0.11236E-01   0.36163E-01    0.002505    0.130775E-02     1.00000        0.544930E-06
+ -----------------------------------------------------------------------------------------------------------------
+   sum                                                             208.437                        0.868542E-01
+ -----------------------------------------------------------------------------------------------------------------
+
+
+
+          ***** PARTICIPATION FACTOR CALCULATION *****  Y  DIRECTION
+                                                                                  CUMULATIVE     RATIO EFF.MASS
+  MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
+     1     31.1381       0.32115E-01   0.21906E-01    0.000719    0.479888E-03    0.517604E-06    0.199966E-06
+     2     76.6567       0.13045E-01  -0.12601        0.004139    0.158794E-01    0.176450E-04    0.661682E-05
+     3     89.0006       0.11236E-01   -30.449        1.000000     927.116         1.00000        0.386323    
+ -----------------------------------------------------------------------------------------------------------------
+   sum                                                             927.133                        0.386329    
+ -----------------------------------------------------------------------------------------------------------------
+
+
+
+          ***** PARTICIPATION FACTOR CALCULATION *****  Z  DIRECTION
+                                                                                  CUMULATIVE     RATIO EFF.MASS
+  MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
+     1     31.1381       0.32115E-01    42.964        1.000000     1845.88         1.00000        0.769164    
+     2     76.6567       0.13045E-01  -0.17786E-01    0.000414    0.316346E-03     1.00000        0.131819E-06
+     3     89.0006       0.11236E-01  -0.18368E-04    0.000000    0.337400E-09     1.00000        0.140592E-12
+ -----------------------------------------------------------------------------------------------------------------
+   sum                                                             1845.88                        0.769164    
+ -----------------------------------------------------------------------------------------------------------------
+
+
+
+          ***** PARTICIPATION FACTOR CALCULATION *****ROTX DIRECTION
+                                                                                  CUMULATIVE     RATIO EFF.MASS
+  MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
+     1     31.1381       0.32115E-01    21.475        1.000000     461.170        0.934534        0.542555    
+     2     76.6567       0.13045E-01  -0.17678E-01    0.000823    0.312514E-03    0.934535        0.367665E-06
+     3     89.0006       0.11236E-01   -5.6838        0.264672     32.3056         1.00000        0.380067E-01
+ -----------------------------------------------------------------------------------------------------------------
+   sum                                                             493.476                        0.580562    
+ -----------------------------------------------------------------------------------------------------------------
+
+
+
+          ***** PARTICIPATION FACTOR CALCULATION *****ROTY DIRECTION
+                                                                                  CUMULATIVE     RATIO EFF.MASS
+  MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
+     1     31.1381       0.32115E-01   -85.929        1.000000     7383.85        0.816838        0.574626    
+     2     76.6567       0.13045E-01   -40.690        0.473529     1655.68        0.999998        0.128848    
+     3     89.0006       0.11236E-01   0.14913        0.001735    0.222383E-01     1.00000        0.173063E-05
+ -----------------------------------------------------------------------------------------------------------------
+   sum                                                             9039.55                        0.703476    
+ -----------------------------------------------------------------------------------------------------------------
+
+
+
+          ***** PARTICIPATION FACTOR CALCULATION *****ROTZ DIRECTION
+                                                                                  CUMULATIVE     RATIO EFF.MASS
+  MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
+     1     31.1381       0.32115E-01   0.28905E-01    0.000475    0.835515E-03    0.222464E-06    0.614357E-07
+     2     76.6567       0.13045E-01   -7.4692        0.122795     55.7895        0.148547E-01    0.410222E-02
+     3     89.0006       0.11236E-01   -60.827        1.000000     3699.94         1.00000        0.272057    
+ -----------------------------------------------------------------------------------------------------------------
+   sum                                                             3755.73                        0.276160    
+ -----------------------------------------------------------------------------------------------------------------
+
+
+ *** ANSYS BINARY FILE STATISTICS
+  BUFFER SIZE USED= 16384
+       27.688 MB WRITTEN ON ASSEMBLED MATRIX FILE: file.full
+        1.625 MB WRITTEN ON MODAL MATRIX FILE: file.mode
+        3.812 MB WRITTEN ON RESULTS FILE: file.rst
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =        10.780
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 17.2     17.2     ***
+ ANSYS Multiphysics                                
+ 00000000  VERSION=WINDOWS x64   01:47:54  MAY 14, 2018 CP=     10.811
+
+                                                                               
+
+
+
+          ***** ANSYS RESULTS INTERPRETATION (POST1) *****
+
+ *** NOTE ***                            CP =      10.811   TIME= 01:47:54
+ Reading results into the database (SET command) will update the current 
+ displacement and force boundary conditions in the database with the     
+ values from the results file for that load set.  Note that any          
+ subsequent solutions will use these values unless action is taken to    
+ either SAVE the current values or not overwrite them (/EXIT,NOSAVE).    
+
+
+ USE FIRST SUBSTEP ON RESULT FILE  FOR LOAD CASE 0 
+
+ SET COMMAND GOT LOAD STEP=     1  SUBSTEP=     1  CUMULATIVE ITERATION=     1
+   TIME/FREQUENCY=  31.138    
+ TITLE=                                                                         
+
+ *GET  F1        FROM  MODE      1  ITEM=FREQ       VALUE=  31.1381071    
+
+ *GET  F2        FROM  MODE      2  ITEM=FREQ       VALUE=  76.6566788    
+
+ OPENED FILE= G:\pyprojects\VKR\results\antype2\modalResult1.txt FOR COMMAND FILE DATA 
+
+
+  COMMAND FILE CLOSED 
+
+
+ ***** END OF INPUT ENCOUNTERED *****
+
+
+ NUMBER OF WARNING MESSAGES ENCOUNTERED=          0
+ NUMBER OF ERROR   MESSAGES ENCOUNTERED=          0
+
+
+
+ ***** PROBLEM TERMINATED BY INDICATED ERROR(S) OR BY END OF INPUT DATA *****
+
++--------------------- A N S Y S   S T A T I S T I C S ------------------------+
+
+Release: Release 17.2       Build: 17.2       Update: UP20160718   Platform: WINDOWS x64 
+Date Run: 05/14/2018   Time: 01:47
+Operating System: Windows 7 Service Pack 1 (Build: 7601)
+Windows Process ID: 7892        
+
+Processor Model:        Intel(R) Core(TM) i3-3110M CPU @ 2.40GHz
+
+Compiler: Intel(R) FORTRAN Compiler Version 15.0.2  (Build: 20150121)
+          Intel(R) C/C++ Compiler Version 15.0.2  (Build: 20150121)
+          Intel(R) Math Kernel Library Version 11.2.3 Product Build 20150413
+
+Number of machines requested            :    1
+Total number of cores available         :    4
+Number of physical cores available      :    2
+Number of processes requested           :    1
+Number of threads per process requested :    2
+Total number of cores requested         :    2 (Shared Memory Parallel)                    
+
+GPU Acceleration: Not Requested
+
+Job Name: file
+Working Directory: G:\pyprojects\VKR
+
+Total CPU time for main thread                    :        7.3 seconds
+Total CPU time summed for all threads             :       10.9 seconds
+
+Elapsed time spent pre-processing model (/PREP7)  :        0.3 seconds
+Elapsed time spent solution - preprocessing       :        0.1 seconds
+Elapsed time spent computing solution             :        6.0 seconds
+Elapsed time spent solution - postprocessing      :        0.0 seconds
+Elapsed time spent post-processing model (/POST1) :        0.0 seconds
+ 
+Eigensolver used                                  :            Block Lanczos
+Equation solver computational rate                :     6255.1 Mflops
+
+Maximum total memory used                         :      393.0 MB
+Maximum total memory allocated                    :     2112.0 MB
+Maximum total memory available                    :          4 GB
+
++------------------ E N D   A N S Y S   S T A T I S T I C S -------------------+
+
+
+ *---------------------------------------------------------------------------*
+ |                                                                           |
+ |                            ANSYS RUN COMPLETED                            |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ | Ansys Release 17.2          Build 17.2         UP20160718     WINDOWS x64 |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ | Database Requested(-db)  1024 MB    Scratch Memory Requested      1024 MB |
+ | Maximum Database Used      11 MB    Maximum Scratch Memory Used    382 MB |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ |        CP Time      (sec) =         10.936       Time  =  01:47:55        |
+ |        Elapsed Time (sec) =         16.000       Date  =  05/14/2018      |
+ |                                                                           |
+ *---------------------------------------------------------------------------*
