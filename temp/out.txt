@@ -76,14 +76,14 @@
   INITIAL DIRECTORY = G:\pyprojects\VKR\temp
 
  RELEASE= Release 17.2         BUILD= 17.2      UP20160718   VERSION=WINDOWS x64 
- CURRENT JOBNAME=file  01:47:48  MAY 14, 2018 CP=      1.170
+ CURRENT JOBNAME=file  02:37:06  MAY 16, 2018 CP=      0.905
 
      1  *SET,l,4
      2  *SET,b,1
      3  *SET,h,0.25 
      4  *SET,l0,1   
      5  *SET,del,0.05   
-     6  *SET,d,0.01 
+     6  *SET,d,0.51 
      7  /PREP7  
      8  ET,1,SOLID187   
      9  BLOCK,,l,,b,,h, 
@@ -122,7 +122,7 @@
     42  SET,FIRST   
     43  *GET,F1,MODE,1,FREQ 
     44  *GET,F2,MODE,2,FREQ 
-    45  *cfopen,G:\pyprojects\VKR\results\antype2\modalResult1,txt  
+    45  *cfopen,G:\pyprojects\VKR\results\antype2\modalResult11,txt 
     46  *vwrite,F1  
     47  (f7.4)  
     48  *vwrite,F2  
@@ -143,11 +143,11 @@
 
  PARAMETER DEL =    0.5000000000E-01
 
- PARAMETER D =    0.1000000000E-01
+ PARAMETER D =    0.5100000000    
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 17.2     17.2     ***
  ANSYS Multiphysics                                
- 00000000  VERSION=WINDOWS x64   01:47:48  MAY 14, 2018 CP=      1.248
+ 00000000  VERSION=WINDOWS x64   02:37:07  MAY 16, 2018 CP=      0.967
 
                                                                                
 
@@ -174,13 +174,13 @@
 
  KEYPOINT     10   X,Y,Z=   1.05000       0.00000       0.00000      IN CSYS=  0
 
- KEYPOINT     11   X,Y,Z=   1.02500      0.100000E-01   0.00000      IN CSYS=  0
+ KEYPOINT     11   X,Y,Z=   1.02500      0.510000       0.00000      IN CSYS=  0
 
  KEYPOINT     12   X,Y,Z=   1.00000       0.00000      0.250000      IN CSYS=  0
 
  KEYPOINT     13   X,Y,Z=   1.05000       0.00000      0.250000      IN CSYS=  0
 
- KEYPOINT     14   X,Y,Z=   1.02500      0.100000E-01  0.250000      IN CSYS=  0
+ KEYPOINT     14   X,Y,Z=   1.02500      0.510000      0.250000      IN CSYS=  0
 
  VOLUME CONNECTING KEYPOINTS     9    10    11    11    12    13    14    14
     (GENERATED LINES AND AREAS FITTED IN ACTIVE CSYS =  0)
@@ -239,8 +239,8 @@
  GENERATE NODES AND ELEMENTS   IN  ALL  SELECTED VOLUMES  
 
  NUMBER OF VOLUMES MESHED   =         1
- MAXIMUM NODE NUMBER        =     13215
- MAXIMUM ELEMENT NUMBER     =      8064
+ MAXIMUM NODE NUMBER        =     13539
+ MAXIMUM ELEMENT NUMBER     =      8190
 
  CONSTRAINT AT LINE     1
       LOAD LABELS = UX    UY    UZ  
@@ -251,7 +251,7 @@
       VALUES =      0.0000         0.0000    
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.529
+ ***** ROUTINE COMPLETED *****  CP =         1.170
 
 
 
@@ -288,7 +288,7 @@
  TRANSFER SOLID MODEL BOUNDARY CONDITIONS TO FINITE ELEMENT MODEL
       CONSTRAINTS    TRANSFERRED FROM LINES         =    126
 
- *** NOTE ***                            CP =       1.529   TIME= 01:47:48
+ *** NOTE ***                            CP =       1.170   TIME= 02:37:07
  There is no title defined for this analysis.                            
 
  *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
@@ -301,7 +301,7 @@
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 17.2     17.2     ***
  ANSYS Multiphysics                                
- 00000000  VERSION=WINDOWS x64   01:47:48  MAY 14, 2018 CP=      1.560
+ 00000000  VERSION=WINDOWS x64   02:37:07  MAY 16, 2018 CP=      1.201
 
                                                                                
 
@@ -320,7 +320,7 @@
    NUMBER OF MODES TO EXPAND . . . . . . . . . . .     5
    ELEMENT RESULTS CALCULATION . . . . . . . . . .OFF
 
- *** NOTE ***                            CP =       1.591   TIME= 01:47:48
+ *** NOTE ***                            CP =       1.232   TIME= 02:37:07
  The conditions for direct assembly have been met.  No .emat or .erot    
  files will be produced.                                                 
 
@@ -337,55 +337,55 @@
 
    TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN
                Translational mass               |   Coupled translational/rotational mass
-         2399.9        0.0000        0.0000     |     0.0000        299.98       -1200.0    
-         0.0000        2399.9        0.0000     |    -299.98        0.0000        4799.8    
-         0.0000        0.0000        2399.9     |     1200.0       -4799.8        0.0000    
+         2392.4        0.0000        0.0000     |     0.0000        299.04       -1198.7    
+         0.0000        2392.4        0.0000     |    -299.04        0.0000        4792.2    
+         0.0000        0.0000        2392.4     |     1198.7       -4792.2        0.0000    
      ------------------------------------------ | ------------------------------------------
                                                 |         Rotational mass (inertia)
-                                                |     850.00       -2400.0       -599.98    
-                                                |    -2400.0        12850.       -150.00    
-                                                |    -599.98       -150.00        13600.    
+                                                |     849.51       -2398.7       -599.02    
+                                                |    -2398.7        12842.       -149.84    
+                                                |    -599.02       -149.84        13592.    
 
-   TOTAL MASS =  2399.9    
+   TOTAL MASS =  2392.4    
      The mass principal axes coincide with the global Cartesian axes
 
-   CENTER OF MASS (X,Y,Z)=    2.0001       0.50003       0.12500    
+   CENTER OF MASS (X,Y,Z)=    2.0031       0.50106       0.12500    
 
    TOTAL INERTIA ABOUT CENTER OF MASS
-         212.46       0.72642E-01   0.90949E-12
-        0.72642E-01    3212.4      -0.48317E-12
-        0.90949E-12  -0.48317E-12    3399.8    
+         211.51        2.4693       0.56843E-12
+         2.4693        3205.2       0.19043E-11
+        0.56843E-12   0.19043E-11    3391.8    
      The inertia principal axes coincide with the global Cartesian axes
 
 
   *** MASS SUMMARY BY ELEMENT TYPE ***
 
   TYPE      MASS
-     1   2399.85    
+     1   2392.35    
 
  Range of element maximum matrix coefficients in global coordinates
- Maximum = 4.830723529E+09 at element 699.                               
- Minimum = 565072415 at element 6336.                                    
+ Maximum = 6.40033483E+09 at element 1922.                               
+ Minimum = 611625188 at element 6154.                                    
 
    *** ELEMENT MATRIX FORMULATION TIMES
   TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-     1      8064  SOLID187      1.451   0.000180
- Time at end of element matrix formulation CP = 3.47882247.              
+     1      8190  SOLID187      1.326   0.000162
+ Time at end of element matrix formulation CP = 2.93281865.              
 
   BLOCK LANCZOS CALCULATION OF UP TO    5 EIGENVECTORS.
-  NUMBER OF EQUATIONS              =        39519
-  MAXIMUM WAVEFRONT                =          222
+  NUMBER OF EQUATIONS              =        40491
+  MAXIMUM WAVEFRONT                =          225
   MAXIMUM MODES STORED             =            5
   MINIMUM EIGENVALUE               =  0.10000E+01
   MAXIMUM EIGENVALUE               =  0.10000E+03
 
-  Memory allocated for solver =         277.529 MB
-  Memory required for in-core =         160.476 MB
-  Memory required for out-of-core =      27.622 MB
+  Memory allocated for solver =         283.081 MB
+  Memory required for in-core =         160.518 MB
+  Memory required for out-of-core =      27.337 MB
 
 
- *** NOTE ***                            CP =       4.930   TIME= 01:47:51
+ *** NOTE ***                            CP =       4.399   TIME= 02:37:09
  The Block Lanczos solver is currently running in the in-core memory     
  mode.  This memory mode uses the most amount of memory in order to      
  avoid using the hard drive as much as possible, which most often        
@@ -393,13 +393,13 @@
  enough physical memory is present to accommodate all of the solver      
  data.                                                                   
 
- *** NOTE ***                            CP =      10.546   TIME= 01:47:54
+ *** NOTE ***                            CP =       8.096   TIME= 02:37:11
  Fewer modes than the requested number of modes ( 5 ) were computed.     
  The range specified (FREQB= 1, FREQE= 100) contains only 3 modes.       
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 17.2     17.2     ***
  ANSYS Multiphysics                                
- 00000000  VERSION=WINDOWS x64   01:47:54  MAY 14, 2018 CP=     10.546
+ 00000000  VERSION=WINDOWS x64   02:37:11  MAY 16, 2018 CP=      8.096
 
                                                                                
 
@@ -412,13 +412,13 @@
 
 
    FREQUENCY RANGE REQUESTED=   1.00000       100.000    
-    1     31.13810706265    
-    2     76.65667875021    
-    3     89.00059851197    
+    1     28.32924600417    
+    2     69.80380265909    
+    3     82.19743479677    
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 17.2     17.2     ***
  ANSYS Multiphysics                                
- 00000000  VERSION=WINDOWS x64   01:47:54  MAY 14, 2018 CP=     10.670
+ 00000000  VERSION=WINDOWS x64   02:37:11  MAY 16, 2018 CP=      8.221
 
                                                                                
 
@@ -429,11 +429,11 @@
           ***** PARTICIPATION FACTOR CALCULATION *****  X  DIRECTION
                                                                                   CUMULATIVE     RATIO EFF.MASS
   MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
-     1     31.1381       0.32115E-01   0.47117E-01    0.003264    0.222004E-02    0.106509E-04    0.925074E-06
-     2     76.6567       0.13045E-01    14.437        1.000000     208.434        0.999994        0.868527E-01
-     3     89.0006       0.11236E-01   0.36163E-01    0.002505    0.130775E-02     1.00000        0.544930E-06
+     1     28.3292       0.35299E-01   0.32931        0.024038    0.108445        0.561492E-03    0.453300E-04
+     2     69.8038       0.14326E-01   -13.699        1.000000     187.673        0.972267        0.784472E-01
+     3     82.1974       0.12166E-01   -2.3144        0.168938     5.35622         1.00000        0.223890E-02
  -----------------------------------------------------------------------------------------------------------------
-   sum                                                             208.437                        0.868542E-01
+   sum                                                             193.138                        0.807314E-01
  -----------------------------------------------------------------------------------------------------------------
 
 
@@ -441,11 +441,11 @@
           ***** PARTICIPATION FACTOR CALCULATION *****  Y  DIRECTION
                                                                                   CUMULATIVE     RATIO EFF.MASS
   MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
-     1     31.1381       0.32115E-01   0.21906E-01    0.000719    0.479888E-03    0.517604E-06    0.199966E-06
-     2     76.6567       0.13045E-01  -0.12601        0.004139    0.158794E-01    0.176450E-04    0.661682E-05
-     3     89.0006       0.11236E-01   -30.449        1.000000     927.116         1.00000        0.386323    
+     1     28.3292       0.35299E-01   -1.9781        0.064090     3.91272        0.409061E-02    0.163551E-02
+     2     69.8038       0.14326E-01   0.18753        0.006076    0.351690E-01    0.412737E-02    0.147006E-04
+     3     82.1974       0.12166E-01    30.864        1.000000     952.565         1.00000        0.398171    
  -----------------------------------------------------------------------------------------------------------------
-   sum                                                             927.133                        0.386329    
+   sum                                                             956.513                        0.399821    
  -----------------------------------------------------------------------------------------------------------------
 
 
@@ -453,11 +453,11 @@
           ***** PARTICIPATION FACTOR CALCULATION *****  Z  DIRECTION
                                                                                   CUMULATIVE     RATIO EFF.MASS
   MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
-     1     31.1381       0.32115E-01    42.964        1.000000     1845.88         1.00000        0.769164    
-     2     76.6567       0.13045E-01  -0.17786E-01    0.000414    0.316346E-03     1.00000        0.131819E-06
-     3     89.0006       0.11236E-01  -0.18368E-04    0.000000    0.337400E-09     1.00000        0.140592E-12
+     1     28.3292       0.35299E-01    43.001        1.000000     1849.09        0.996664        0.772919    
+     2     69.8038       0.14326E-01  -0.97562        0.022688    0.951834        0.997177        0.397866E-03
+     3     82.1974       0.12166E-01    2.2884        0.053216     5.23658         1.00000        0.218889E-02
  -----------------------------------------------------------------------------------------------------------------
-   sum                                                             1845.88                        0.769164    
+   sum                                                             1855.28                        0.775506    
  -----------------------------------------------------------------------------------------------------------------
 
 
@@ -465,11 +465,11 @@
           ***** PARTICIPATION FACTOR CALCULATION *****ROTX DIRECTION
                                                                                   CUMULATIVE     RATIO EFF.MASS
   MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
-     1     31.1381       0.32115E-01    21.475        1.000000     461.170        0.934534        0.542555    
-     2     76.6567       0.13045E-01  -0.17678E-01    0.000823    0.312514E-03    0.934535        0.367665E-06
-     3     89.0006       0.11236E-01   -5.6838        0.264672     32.3056         1.00000        0.380067E-01
+     1     28.3292       0.35299E-01    21.321        1.000000     454.580        0.916280        0.535109    
+     2     69.8038       0.14326E-01  -0.58398        0.027390    0.341027        0.916967        0.401440E-03
+     3     82.1974       0.12166E-01    6.4183        0.301031     41.1940         1.00000        0.484915E-01
  -----------------------------------------------------------------------------------------------------------------
-   sum                                                             493.476                        0.580562    
+   sum                                                             496.115                        0.584002    
  -----------------------------------------------------------------------------------------------------------------
 
 
@@ -477,11 +477,11 @@
           ***** PARTICIPATION FACTOR CALCULATION *****ROTY DIRECTION
                                                                                   CUMULATIVE     RATIO EFF.MASS
   MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
-     1     31.1381       0.32115E-01   -85.929        1.000000     7383.85        0.816838        0.574626    
-     2     76.6567       0.13045E-01   -40.690        0.473529     1655.68        0.999998        0.128848    
-     3     89.0006       0.11236E-01   0.14913        0.001735    0.222383E-01     1.00000        0.173063E-05
+     1     28.3292       0.35299E-01   -84.456        1.000000     7132.84        0.796737        0.555439    
+     2     69.8038       0.14326E-01    42.388        0.501899     1796.78        0.997438        0.139917    
+     3     82.1974       0.12166E-01   -4.7897        0.056712     22.9408         1.00000        0.178642E-02
  -----------------------------------------------------------------------------------------------------------------
-   sum                                                             9039.55                        0.703476    
+   sum                                                             8952.56                        0.697142    
  -----------------------------------------------------------------------------------------------------------------
 
 
@@ -489,30 +489,30 @@
           ***** PARTICIPATION FACTOR CALCULATION *****ROTZ DIRECTION
                                                                                   CUMULATIVE     RATIO EFF.MASS
   MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
-     1     31.1381       0.32115E-01   0.28905E-01    0.000475    0.835515E-03    0.222464E-06    0.614357E-07
-     2     76.6567       0.13045E-01   -7.4692        0.122795     55.7895        0.148547E-01    0.410222E-02
-     3     89.0006       0.11236E-01   -60.827        1.000000     3699.94         1.00000        0.272057    
+     1     28.3292       0.35299E-01   -3.1175        0.051889     9.71893        0.264794E-02    0.715067E-03
+     2     69.8038       0.14326E-01    7.1385        0.118816     50.9588        0.165318E-01    0.374928E-02
+     3     82.1974       0.12166E-01    60.081        1.000000     3609.69         1.00000        0.265582    
  -----------------------------------------------------------------------------------------------------------------
-   sum                                                             3755.73                        0.276160    
+   sum                                                             3670.37                        0.270046    
  -----------------------------------------------------------------------------------------------------------------
 
 
  *** ANSYS BINARY FILE STATISTICS
   BUFFER SIZE USED= 16384
-       27.688 MB WRITTEN ON ASSEMBLED MATRIX FILE: file.full
+       28.250 MB WRITTEN ON ASSEMBLED MATRIX FILE: file.full
         1.625 MB WRITTEN ON MODAL MATRIX FILE: file.mode
-        3.812 MB WRITTEN ON RESULTS FILE: file.rst
+        3.875 MB WRITTEN ON RESULTS FILE: file.rst
 
  FINISH SOLUTION PROCESSING
 
 
- ***** ROUTINE COMPLETED *****  CP =        10.780
+ ***** ROUTINE COMPLETED *****  CP =         8.252
 
 
 
  *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE Release 17.2     17.2     ***
  ANSYS Multiphysics                                
- 00000000  VERSION=WINDOWS x64   01:47:54  MAY 14, 2018 CP=     10.811
+ 00000000  VERSION=WINDOWS x64   02:37:11  MAY 16, 2018 CP=      8.284
 
                                                                                
 
@@ -520,7 +520,7 @@
 
           ***** ANSYS RESULTS INTERPRETATION (POST1) *****
 
- *** NOTE ***                            CP =      10.811   TIME= 01:47:54
+ *** NOTE ***                            CP =       8.284   TIME= 02:37:11
  Reading results into the database (SET command) will update the current 
  displacement and force boundary conditions in the database with the     
  values from the results file for that load set.  Note that any          
@@ -531,14 +531,14 @@
  USE FIRST SUBSTEP ON RESULT FILE  FOR LOAD CASE 0 
 
  SET COMMAND GOT LOAD STEP=     1  SUBSTEP=     1  CUMULATIVE ITERATION=     1
-   TIME/FREQUENCY=  31.138    
+   TIME/FREQUENCY=  28.329    
  TITLE=                                                                         
 
- *GET  F1        FROM  MODE      1  ITEM=FREQ       VALUE=  31.1381071    
+ *GET  F1        FROM  MODE      1  ITEM=FREQ       VALUE=  28.3292460    
 
- *GET  F2        FROM  MODE      2  ITEM=FREQ       VALUE=  76.6566788    
+ *GET  F2        FROM  MODE      2  ITEM=FREQ       VALUE=  69.8038027    
 
- OPENED FILE= G:\pyprojects\VKR\results\antype2\modalResult1.txt FOR COMMAND FILE DATA 
+ OPENED FILE= G:\pyprojects\VKR\results\antype2\modalResult11.txt FOR COMMAND FILE DATA 
 
 
   COMMAND FILE CLOSED 
@@ -557,9 +557,9 @@
 +--------------------- A N S Y S   S T A T I S T I C S ------------------------+
 
 Release: Release 17.2       Build: 17.2       Update: UP20160718   Platform: WINDOWS x64 
-Date Run: 05/14/2018   Time: 01:47
+Date Run: 05/16/2018   Time: 02:37
 Operating System: Windows 7 Service Pack 1 (Build: 7601)
-Windows Process ID: 7892        
+Windows Process ID: 6088        
 
 Processor Model:        Intel(R) Core(TM) i3-3110M CPU @ 2.40GHz
 
@@ -579,19 +579,19 @@ GPU Acceleration: Not Requested
 Job Name: file
 Working Directory: G:\pyprojects\VKR
 
-Total CPU time for main thread                    :        7.3 seconds
-Total CPU time summed for all threads             :       10.9 seconds
+Total CPU time for main thread                    :        5.6 seconds
+Total CPU time summed for all threads             :        8.3 seconds
 
-Elapsed time spent pre-processing model (/PREP7)  :        0.3 seconds
+Elapsed time spent pre-processing model (/PREP7)  :        0.2 seconds
 Elapsed time spent solution - preprocessing       :        0.1 seconds
-Elapsed time spent computing solution             :        6.0 seconds
+Elapsed time spent computing solution             :        4.1 seconds
 Elapsed time spent solution - postprocessing      :        0.0 seconds
 Elapsed time spent post-processing model (/POST1) :        0.0 seconds
  
 Eigensolver used                                  :            Block Lanczos
-Equation solver computational rate                :     6255.1 Mflops
+Equation solver computational rate                :     9560.8 Mflops
 
-Maximum total memory used                         :      393.0 MB
+Maximum total memory used                         :      401.0 MB
 Maximum total memory allocated                    :     2112.0 MB
 Maximum total memory available                    :          4 GB
 
@@ -609,11 +609,11 @@ Maximum total memory available                    :          4 GB
  |---------------------------------------------------------------------------|
  |                                                                           |
  | Database Requested(-db)  1024 MB    Scratch Memory Requested      1024 MB |
- | Maximum Database Used      11 MB    Maximum Scratch Memory Used    382 MB |
+ | Maximum Database Used      11 MB    Maximum Scratch Memory Used    390 MB |
  |                                                                           |
  |---------------------------------------------------------------------------|
  |                                                                           |
- |        CP Time      (sec) =         10.936       Time  =  01:47:55        |
- |        Elapsed Time (sec) =         16.000       Date  =  05/14/2018      |
+ |        CP Time      (sec) =          8.315       Time  =  02:37:11        |
+ |        Elapsed Time (sec) =          7.000       Date  =  05/16/2018      |
  |                                                                           |
  *---------------------------------------------------------------------------*

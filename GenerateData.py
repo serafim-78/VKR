@@ -1,8 +1,8 @@
 import shutil
 import os
-import subprocess
 
-#путь результатов модального анализа
+#путь логов и результатов модального анализа
+pathModalLogs=os.getcwd()+'\\logs\\antype2\\'
 pathModalResult=os.getcwd()+'\\results\\antype2\\'
 #длина, ширина, толщина плиты
 #расстояние до трещины, ширина, глубина трещины
@@ -37,7 +37,7 @@ def WriteBaseLogs():
             file.write('dl,1,,all\ndl,3,,all\n')
             k+=1
 
-def WriteAntype(type):
+def WriteAntype(type, f1=None, f2=None):
     k=1
     while(os.path.exists(r'./logs/base/log%d.txt'%(k))):
         shutil.copyfile(r'./logs/base/log%d.txt'%(k), r'./logs/antype%d/log%d.txt'%(type, k))
@@ -57,10 +57,25 @@ def WriteAntype(type):
                 # тип анализа
                 file.write('/SOL\nANTYPE,3\n')
                 # настройка решателя
-                file.write('HROPT,FULL\nHROUT,OFF\nLUMPM,0\nEQSLV, ,0,\nPSTRES,0\nOUTPR,BASIC,ALL,\nHARFRQ,33,52,\nNSUBST,20,\nKBC,0\nsolve\n')
+                file.write('HROPT,FULL\nHROUT,OFF\nLUMPM,0\nEQSLV, ,0,\nPSTRES,0\nOUTPR,BASIC,ALL,\nHARFRQ,'+f1.__str__()+','+f2.__str__()+',\nNSUBST,20,\nKBC,0\nsolve\n')
         k+=1
-print(pathModalResult)
+
+def ModalAnalysis():
+    countLogs=len(os.listdir(path=pathModalLogs))
+    print('Проведение модального анализа. Найдено '+countLogs.__str__()+' log-файлов.')
+    for i in range(1,countLogs+1):
+        os.system(r'G:/Prpgrams/"ANSYS Inc"/v172/ansys/bin/winx64/ANSYS172.exe -b -dir G:/"pyprojects"/VKR/temp/ -i G:/"pyprojects"/VKR/logs/antype2/log%d.txt -o G:/"pyprojects"/VKR/temp/out.txt'%(i))
+        print('Выполнение:'+(round(i*100/countLogs,2)).__str__()+'%')
+    f1,f2=10,100
+    for i in range(1,countLogs+1):
+        with open(pathModalResult+'modalResult'+i.__str__()+'.txt') as log:
+            x=float(log.readline())
+            f1 = x if x>f1 else f1
+            x = float(log.readline())
+            f2 = x if x < f2 else f2
+    print('Модальный анализ завершен!')
+    return [f1, f2]
 
 WriteAntype(2)
-WriteAntype(3)
-os.system(r'G:/Prpgrams/"ANSYS Inc"/v172/ansys/bin/winx64/ANSYS172.exe -b -dir G:/"pyprojects"/VKR/temp/ -i G:/"pyprojects"/VKR/logs/antype2/log1.txt -o G:/"pyprojects"/VKR/temp/out.txt')
+f=ModalAnalysis()
+WriteAntype(3, f[0], f[1])
